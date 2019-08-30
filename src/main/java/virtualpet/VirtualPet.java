@@ -10,7 +10,8 @@ public class VirtualPet {
 	int boredom ;
 	boolean sick; 
 	String name ; 
-	int Rand; 
+	int Rand;
+	String favoriteFood = "Macoroni";
 	
 	
 	
@@ -30,22 +31,26 @@ public class VirtualPet {
 
 
 	
-	public void feedPet() {	
-	/*	if (hunger <= -5) {
-			System.out.println("Pet has had enough to eat");
+	public void feedPet(String favoriteFood) {	
+		if (favoriteFood != "Macoroni & Cheese" && hunger <10) {
+			System.out.println("Sam says he's not too hungry for other kind of food");
 			return;
 		}
-	*/	
-		System.out.println("You fed the pet but it's now thirsty and needs to use the bathroom" + "\n");	
+		
+		if (hunger < 0) {sick = true;
+		System.out.println("Pet has had too much and is now sick");
+		return;
+			}
+		
+		System.out.println("You fed the pet but it's now thirsty and needs to use the bathroom");	
 		if (hunger > -5 )hunger -= 5;
+		
 		if (thirst <= 50) thirst +=5;
-		if (thirst > 50) {
+		else {
 			sick = true;
 			System.out.println("Pet is dehidrated and is now sick");
 		}
-		if (hunger < 0) {sick = true;
-			System.out.println("Pet has had too much and is now sick");
-		}
+		
 		waste = true;
 	}
 	
@@ -65,8 +70,12 @@ public class VirtualPet {
 	}
 	
 	public void takePetToBathroom() {	
+		if (waste == false)
+			System.out.println("Sam does not need to use the bathroom");
+		else {
 		waste = false;
 		System.out.println("Bathroom need all taken care of");
+		}
 	}
 	
 	public void playWithPet() {	
@@ -75,16 +84,22 @@ public class VirtualPet {
 			return;
 		}
 			
-		System.out.println("Pet has played" + "\n");
+		System.out.println("Pet has played");
 		if (boredom >= 0) boredom -= 5;
-		if (boredom < 0) {
+		else {
 			sick = true;
 			System.out.println("Pet is now fatigued and sick");
 		}
 	}	
 	
 	public void takePetToVet() {	
+		if (sick == false) {
+			System.out.println("Sam is not sick and does not need a vet");
+			return;
+		}
+		
 		System.out.println(name + " just saw Dr. Dolittle.  He is now well");
+		sick = false;
 	}
 
 	public  void tick( ) {
