@@ -9,7 +9,7 @@ public class VirtualPetApp {
 
 		Scanner input = new Scanner(System.in);
 		
-		VirtualPet SmithsCat = new VirtualPet (5, 10, false, 0, true, "Sam");
+		VirtualPet SmithsCat = new VirtualPet (15, 20, false, 20, false, "Sam");
 
 		
 		int userInput = 2;
@@ -22,20 +22,19 @@ public class VirtualPetApp {
 		switch (userInput) {
 		
 		case 1: SmithsCat.feedPet(); 
-				SmithsCat.tick();
-				System.out.println("New hunger value" + SmithsCat.hunger);
+				//SmithsCat.tick();
 				break;
 				
 		case 2: SmithsCat.waterPet();
-				SmithsCat.tick();
+				//SmithsCat.tick();
 				break;
 		
 		case 3: SmithsCat.takePetToBathroom(); 
-				SmithsCat.tick();
+				//SmithsCat.tick();
 				break;
 		
 		case 4: SmithsCat.playWithPet(); 
-				SmithsCat.tick();
+			//	SmithsCat.tick();
 				break;
 		
 		case 5: SmithsCat.takePetToVet(); 
@@ -52,7 +51,7 @@ public class VirtualPetApp {
 	}
 
 	private static void printPetStatus(int hunger, int thirst, boolean waste, int boredom, boolean sick) {
-		System.out.println("\n" + "PET STATUS: ");
+		System.out.println("PET STATUS: Scale values -5 to 55");
 		System.out.print("Hunger: " + hunger);
 		System.out.print("   Thirst: " + thirst);
 		System.out.print("   Bathroom: " + waste);

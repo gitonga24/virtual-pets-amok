@@ -28,27 +28,60 @@ public class VirtualPet {
 	
 	
 
-	/*void goToHospital() {
-		System.out.println(name + " just saw Dr. Dolittle.  He is now well");
-		sick = false;
-	}*/
+
 	
 	public void feedPet() {	
-		System.out.println("You fed the pet" + "\n");	
-		hunger += 10;
+	/*	if (hunger <= -5) {
+			System.out.println("Pet has had enough to eat");
+			return;
+		}
+	*/	
+		System.out.println("You fed the pet but it's now thirsty and needs to use the bathroom" + "\n");	
+		if (hunger > -5 )hunger -= 5;
+		if (thirst <= 50) thirst +=5;
+		if (thirst > 50) {
+			sick = true;
+			System.out.println("Pet is dehidrated and is now sick");
+		}
+		if (hunger < 0) {sick = true;
+			System.out.println("Pet has had too much and is now sick");
+		}
+		waste = true;
 	}
 	
-	public void waterPet() {	
-		System.out.println("The pet has quenched his thirst" + "\n");
+	public void waterPet() {
+		if (thirst <= -5) {
+			System.out.println("Pet has had enough to drink");
+			return;
+		}
+		
+		System.out.println("The pet has had to drink but now needs to use the bathroom");
+		if (thirst >= 0) thirst -=5;
+		if (thirst < 0) {
+			sick = true;
+			System.out.println("Pet had too much to drink and is now sick!!");
+		}
+		waste = true;
 	}
 	
 	public void takePetToBathroom() {	
-		System.out.println("Bathroom need all taken care of" + "\n");
+		waste = false;
+		System.out.println("Bathroom need all taken care of");
 	}
 	
 	public void playWithPet() {	
-		System.out.println("Pet feels exited from a moment of some fun. Thank you" + "\n");
-	}
+		if (sick == true) {
+			System.out.println("pet is sick and cannot play");
+			return;
+		}
+			
+		System.out.println("Pet has played" + "\n");
+		if (boredom >= 0) boredom -= 5;
+		if (boredom < 0) {
+			sick = true;
+			System.out.println("Pet is now fatigued and sick");
+		}
+	}	
 	
 	public void takePetToVet() {	
 		System.out.println(name + " just saw Dr. Dolittle.  He is now well");
