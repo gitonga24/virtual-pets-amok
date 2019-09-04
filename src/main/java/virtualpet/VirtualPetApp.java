@@ -67,6 +67,9 @@ public class VirtualPetApp {
 
 	}
 	
+	TestPet JamesPet = new TestPet ("MickeyMouse", "Bones", 30, 10);
+	
+//	JamesPet.AssignHeight(50);
 	
 
 }

@@ -128,6 +128,11 @@ public class VirtualPet {
 		else sick = true;
 	
 	}
+	
+//	public TestPet (String name, String favFood, int weight, int height) 
+	TestPet JamesPet = new TestPet ("MickeyMouse", "Bones", 30, 10);
+	
+//	JamesPet.AssignHeight(50);
 
 	
 }
