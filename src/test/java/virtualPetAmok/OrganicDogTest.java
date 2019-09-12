@@ -7,7 +7,7 @@ import org.junit.Test;
 public class OrganicDogTest {
 
 	
-	OrganicDog organicDogTest = new OrganicDog ();
+	OrganicDog organicDogTest = new OrganicDog ("name", "descrption", "organic", 25, 50);
 	
 	@Test
 	public void playShouldReduceBoredomBy15() {

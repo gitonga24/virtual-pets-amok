@@ -1,6 +1,6 @@
 package virtualPetAmok;
 
-public interface OrganicPets {
+public interface OrganicPetsInterface {
 
 	int getHunger();
 
@@ -8,8 +8,8 @@ public interface OrganicPets {
 
 	void setHunger(int hunger);
 
-	void water();
+	void waterPets();
 
-	void feed();
+	void feedPets();
 
 }

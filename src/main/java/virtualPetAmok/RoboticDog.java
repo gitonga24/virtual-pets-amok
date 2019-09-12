@@ -5,8 +5,12 @@ public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface
 	private int oilLevel;
 	private int CageCleanliness;
 
-	public RoboticDog() {
-		// TODO Auto-generated constructor stub
+	public RoboticDog(String name, String description, String demeanor, int boredom, int health) {
+		this.boredom = boredom;
+		this.demeanor = demeanor;
+		this.name = name;
+		this.description = description;
+		this.health = health;
 	}
 
 	
@@ -22,6 +26,7 @@ public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface
 
 	@Override
 	public void oilPet(int oilAmt) {
+		System.out.println(name + " has been oiled");
 		oilLevel += oilAmt;
 		
 	}
@@ -29,14 +34,21 @@ public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface
 	
 	@Override
 	public int getCageCleanliness() {
-		// TODO Auto-generated method stub
 		return CageCleanliness;
 	}
 
 	@Override
 	public void cleanCage(int cleanValue) {
+		System.out.println(this.name +"'s cage has been cleaned.");
 		CageCleanliness += cleanValue;
 
+	}
+
+
+	@Override
+	public void walkDog() {
+		System.out.println(this.name + " dog is walking");
+		
 	}
 
 }

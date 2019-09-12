@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class RoboticCatTest {
 	
-	RoboticCat roboticCatTest = new RoboticCat ();
+	RoboticCat roboticCatTest = new RoboticCat ("name", "descrption", "organic", 25, 50);
 	
 	@Test
 	public void emptyLitterBoxShouldIncreaseLitterboxCleanlinessBy20() {

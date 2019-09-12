@@ -1,6 +1,6 @@
 package virtualPetAmok;
 
-public class OrganicCat extends Pet implements OrganicPets, CatInterface {
+public class OrganicCat extends Pet implements OrganicPetsInterface, CatInterface {
 
 	private int LitterBoxCleanliness;
 	private int hunger;
@@ -24,13 +24,13 @@ public class OrganicCat extends Pet implements OrganicPets, CatInterface {
 		this.hunger = hunger;	
 	}
 	
-	public OrganicCat(String name, String description, String make, int boredom, int hunger, int thirst, int health) {
-		this.hunger = hunger;
+	public OrganicCat(String name, String description, String demeanor, int boredom, int health) {
+		this.hunger = 20;
 		this.boredom = boredom;
-		this.demeanor = make;
+		this.demeanor = demeanor;
 		this.name = name;
 		this.description = description;
-		this.thirst = thirst;
+		this.thirst = 25;
 		this.health = health;
 	}
 
@@ -47,19 +47,22 @@ public class OrganicCat extends Pet implements OrganicPets, CatInterface {
 
 	@Override
 	public void empyLitterBox(int i) {
+		System.out.println(this.name + "'s litterbox has been emptied");
 		LitterBoxCleanliness += i;
 
 	}
 
 	@Override
-	public void water() {
+	public void waterPets() {
+		System.out.println(name + " has been watered.");
 		thirst -= 15;
 	}
 
 
 
 	@Override
-	public void feed() {
+	public void feedPets() {
+		System.out.println(this.name + " has been fed.");
 		hunger -= 30;
 		
 	}

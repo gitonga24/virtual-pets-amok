@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class RoboticDogTest  {
 	
-	RoboticDog roboticDogTest = new RoboticDog();
+	RoboticDog roboticDogTest = new RoboticDog("name", "descrption", "organic", 25, 50);
 	
 	
 	@Test

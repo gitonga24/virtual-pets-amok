@@ -16,7 +16,7 @@ public class VirtualPetShelterTest {
 		@SuppressWarnings("deprecation")
 		@Test
 		public void shouldBeAbleToAddNewPet() {
-			OrganicCat organicCat = new OrganicCat("Garfield", "Fiesty and calm", "Robot", 0, 0, 0, 0);
+			OrganicCat organicCat = new OrganicCat("name", "descrption", "organic", 25, 50);
 			virtualPetShelter.addPet(organicCat);
 			Collection <Pet> check = virtualPetShelter.getAllPets();
 			assertThat (check, contains(organicCat));					
@@ -24,8 +24,8 @@ public class VirtualPetShelterTest {
 		
 		@Test
 		public void shouldBeAbleToAddTwoPets() {
-			OrganicCat organicCat = new OrganicCat();
-			RoboticCat roboticCat = new RoboticCat();			
+			OrganicCat organicCat = new OrganicCat("name", "descrption", "organic", 25, 50);
+			RoboticCat roboticCat = new RoboticCat("name2", "descrption", "organic", 25, 50);			
 			virtualPetShelter.addPet(organicCat);
 			virtualPetShelter.addPet(roboticCat);
 			Collection <Pet> check = virtualPetShelter.getAllPets();
@@ -33,21 +33,21 @@ public class VirtualPetShelterTest {
 		}
 		
 		@Test
-		public void shouldBeAbleToAddThreePets() {
-			OrganicCat organicCat = new OrganicCat();
-			RoboticCat roboticCat = new RoboticCat();	
-			OrganicDog organicDog = new OrganicDog();
-			//virtualPetShelter.addPet(organicCat);
+		public void shouldBeAbleToAddTwoDifferentPets() {
+			OrganicCat organicCat = new OrganicCat("name", "descrption", "organic", 25, 50);
+			RoboticCat roboticCat = new RoboticCat("name1", "descrption", "organic", 25, 50);	
+			OrganicDog organicDog = new OrganicDog("name2", "descrption", "organic", 25, 50);
+			virtualPetShelter.addPet(organicCat);
 			virtualPetShelter.addPet(roboticCat);
-			virtualPetShelter.addPet(organicDog);
+			//virtualPetShelter.addPet(organicDog);
 			Collection <Pet> check = virtualPetShelter.getAllPets();
-			assertThat (check, contains( roboticCat, organicDog));
+			assertThat (check, contains(organicCat, roboticCat ));
 		}
 		
 		
 		@Test
 		public void shouldBeAbleToAddRoboticDog() {
-			RoboticDog roboticDog = new RoboticDog();
+			RoboticDog roboticDog = new RoboticDog("name", "descrption", "organic", 25, 50);
 			virtualPetShelter.addPet(roboticDog);
 			Collection<Pet> check = virtualPetShelter.getAllPets();
 			assertThat (check, contains(roboticDog));
@@ -55,10 +55,14 @@ public class VirtualPetShelterTest {
 		
 		@Test
 		public void shouldBeAbleToWalkDogs() {
-			OrganicDog organicDog = new OrganicDog();
-			
-			
-			
+			OrganicDog organicDog1 = new OrganicDog("Dog 1", "descrption", "organic", 25, 50);
+			OrganicDog organicDog2 = new OrganicDog("Dog 2", "descrption", "organic", 25, 50);
+			OrganicDog organicDog3 = new OrganicDog("Dog 3", "descrption", "organic", 25, 50);
+			RoboticDog roboticDog3 = new RoboticDog("Dog 3", "descrption", "organic", 25, 50);
+			virtualPetShelter.addPet(organicDog1);
+			virtualPetShelter.addPet(organicDog2);
+			virtualPetShelter.addPet(organicDog3);
+			virtualPetShelter.addPet(roboticDog3);
 		}
 
 

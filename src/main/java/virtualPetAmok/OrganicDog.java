@@ -1,17 +1,17 @@
 package virtualPetAmok;
 
-public class OrganicDog extends Pet implements OrganicPets, DogInterface {
+public class OrganicDog extends Pet implements OrganicPetsInterface, DogInterface {
 
 	private int hunger;
 	private int thirst;
 	private int cageCleanliness;
 	
-	public OrganicDog() {
+	public OrganicDog(String name, String description, String demeanor, int boredom, int health) {
 		hunger = 10; 
-		boredom = 30;
-		demeanor = "n/a";
-		name = "";
-		description = "";
+		this.boredom = boredom;
+		this.demeanor = demeanor;
+		this.name = name;
+		this.description = description;
 	}
 
 	@Override
@@ -21,6 +21,7 @@ public class OrganicDog extends Pet implements OrganicPets, DogInterface {
 
 	@Override
 	public void cleanCage(int cleanValue) {
+		System.out.println(this.name +"'s cage has been cleaned.");
 		cageCleanliness += cleanValue;
 	}
 
@@ -47,15 +48,23 @@ public class OrganicDog extends Pet implements OrganicPets, DogInterface {
 	}
 
 	@Override
-	public void water() {
+	public void waterPets() {
+		System.out.println(name + " has been watered.");
 		thirst -= 15;
 
 	}
 
 	@Override
-	public void feed() {
+	public void feedPets() {
+		System.out.println(name + " has been feed.");
 		hunger -= 30;
 
+	}
+
+	@Override
+	public void walkDog() {
+		System.out.println(this.name + " dog is walking");
+		
 	}
 
 }

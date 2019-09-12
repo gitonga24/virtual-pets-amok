@@ -6,12 +6,12 @@ import org.junit.Test;
 
 public class OrganicCatTest {
 	
-	OrganicCat organicCatTest = new OrganicCat ("name", "descrption", "organic", 25, 50, 50, 50);
+	OrganicCat organicCatTest = new OrganicCat ("name", "descrption", "organic", 25, 50);
 	
 	@Test
 	public void cleaningLitterBoxShouldIncreaseLitterboxCleanilinessBy10() {
 		
-		CatInterface organicCatTest = new OrganicCat ("name", "descrption", "make", 25, 50, 50, 50);
+		CatInterface organicCatTest = new OrganicCat ("name", "descrption", "make", 25, 50);
 		int Cleanlinessbefore = organicCatTest.getLitterBoxCleanliness(); 
 		organicCatTest.empyLitterBox(10);
 		int Cleanlinessafter = organicCatTest.getLitterBoxCleanliness();
@@ -21,7 +21,8 @@ public class OrganicCatTest {
 	
 	@Test
 	public void shouldReturnHungervalue() {
-		OrganicPets organicCatTest = new OrganicCat ("name", "descrption", "make", 25, 50, 50, 50);
+		OrganicPetsInterface organicCatTest = new OrganicCat ("name", "descrption", "make", 25, 50);
+		organicCatTest.setHunger(50);
 		int hunger = organicCatTest.getHunger();
 		assertEquals (hunger, 50);	
 	}
@@ -42,14 +43,14 @@ public class OrganicCatTest {
 	
 	@Test
 	public void shouldReturnCollectPetNameasMike() {
-		Pet organicCatTest = new OrganicCat ("Mike", "descrption", "organic", 30, 50, 50, 50);
+		Pet organicCatTest = new OrganicCat ("Mike", "descrption", "organic", 30, 50);
 		String test = organicCatTest.getName();
 		assertEquals (test, "Mike" );		
 	}
 	
 	@Test
 	public void shouldReturnDescriptionAsLikeableAndSassy() {
-		Pet organicCatTest = new OrganicCat ("name", "Likeable and Sassy", "make", 25, 50, 50, 50);
+		Pet organicCatTest = new OrganicCat ("name", "Likeable and Sassy", "make", 25, 50);
 		String test = organicCatTest.getDescription();
 		assertEquals (test, "Likeable and Sassy");	
 	}
@@ -57,14 +58,14 @@ public class OrganicCatTest {
 	@Test
 	public void waterShouldReduceThirstBy15() {
 		int beforeWatering = organicCatTest.getThirst();
-		organicCatTest.water();
+		organicCatTest.waterPets();
 		int aftetWatering = organicCatTest.getThirst();
 		assertEquals ( beforeWatering - aftetWatering, 15);
 	}
 	
 	@Test
 	public void playShouldIncreaseHealthBy5() {
-		Pet organicCatTest = new OrganicCat ("name", "Likeable and Sassy", "make", 25, 50, 50, 50);
+		Pet organicCatTest = new OrganicCat ("name", "Likeable and Sassy", "make", 25, 50);
 		int healthBeforePlay = organicCatTest.getHealth();
 		organicCatTest.play();
 		int healthAfterPlay = organicCatTest.getHealth();
@@ -75,7 +76,7 @@ public class OrganicCatTest {
 	@Test
 	public void feedingCatShouldDecreaseHungerBy30() {
 		organicCatTest.setHunger(50);
-		organicCatTest.feed();
+		organicCatTest.feedPets();
 		int hungerAfterFeeding = organicCatTest.getHunger();
 		assertEquals (hungerAfterFeeding, 20 );
 	}

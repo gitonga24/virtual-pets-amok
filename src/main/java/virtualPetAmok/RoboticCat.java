@@ -5,11 +5,17 @@ public class RoboticCat extends Pet implements CatInterface, RoboticPetInterface
 	private int LitterBoxCleanliness = 10;
 	private int oilLevel;
 
-	//public RoboticCat(String string, String string2, String string3, int health, int j, int k, int l) {
-		// TODO Auto-generated constructor stub
-	//}
+
 
 	
+
+	public RoboticCat(String name, String description, String demeanor, int boredom, int health) {
+		this.name = name;
+		this.description = description;
+		this.demeanor = demeanor;
+		this.boredom = boredom;
+		this.health = health;
+	}
 
 	@Override
 	public int getLitterBoxCleanliness() {
@@ -19,18 +25,17 @@ public class RoboticCat extends Pet implements CatInterface, RoboticPetInterface
 
 	@Override
 	public void empyLitterBox(int i) {
+		System.out.println(this.name + "'s litterbox has been emptied");
 		LitterBoxCleanliness += i;
 		
 	}
 
 	public void setLitterBoxCleanliness(int i) {
-		LitterBoxCleanliness = i;
-		
+		LitterBoxCleanliness = i;		
 	}
 
 	public void setHealth(int i) {
-		health = i;
-		
+		health = i;	
 	}
 
 	@Override
@@ -50,6 +55,7 @@ public class RoboticCat extends Pet implements CatInterface, RoboticPetInterface
 
 	@Override
 	public void oilPet(int oilAmt) {
+		System.out.println(name + " has been oiled");
 		oilLevel += oilAmt;		
 	}
 

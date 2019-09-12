@@ -58,6 +58,7 @@ public abstract class Pet {
 	
 	
 	public void play() {
+		System.out.println("You have played with: " + name);
 		boredom -= 15;
 		health += 5;
 	}
