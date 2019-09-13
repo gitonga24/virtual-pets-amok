@@ -5,6 +5,7 @@ public class OrganicCat extends Pet implements OrganicPetsInterface, CatInterfac
 	private int LitterBoxCleanliness;
 	private int hunger;
 	private int thirst;
+
 	@Override
 	public int getHunger() {
 		return hunger;
@@ -14,6 +15,7 @@ public class OrganicCat extends Pet implements OrganicPetsInterface, CatInterfac
 	public int getLitterBoxCleanliness() {
 		return LitterBoxCleanliness;
 	}
+
 	@Override
 	public int getThirst() {
 		return thirst;
@@ -21,9 +23,9 @@ public class OrganicCat extends Pet implements OrganicPetsInterface, CatInterfac
 
 	@Override
 	public void setHunger(int hunger) {
-		this.hunger = hunger;	
+		this.hunger = hunger;
 	}
-	
+
 	public OrganicCat(String name, String description, String demeanor, int boredom, int health) {
 		this.hunger = 20;
 		this.boredom = boredom;
@@ -35,36 +37,51 @@ public class OrganicCat extends Pet implements OrganicPetsInterface, CatInterfac
 	}
 
 	public OrganicCat() {
-		hunger = 10; 
+		hunger = 10;
 		boredom = 30;
 		demeanor = "n/a";
 		name = "";
 		description = "";
-		
+
 	}
-
-
 
 	@Override
 	public void empyLitterBox(int i) {
-		System.out.println(this.name + "'s litterbox has been emptied");
-		LitterBoxCleanliness += i;
-
+		int litterBoxCleanlinessBefore = LitterBoxCleanliness + i;
+		System.out.println(this.name + "'s litterbox has been emptied. Litter box cleanliness value has raised from: "
+				+ LitterBoxCleanliness + " to " + litterBoxCleanlinessBefore);
 	}
 
 	@Override
 	public void waterPets() {
-		System.out.println(name + " has been watered.");
-		thirst -= 15;
+		int initiaThirst = thirst;
+		thirst -= 30;
+		System.out.println(this.name + " has been watered. Thirst score before was: " + initiaThirst
+				+ ": Thirst after: " + thirst);
 	}
-
-
 
 	@Override
 	public void feedPets() {
-		System.out.println(this.name + " has been fed.");
+		int initialHunger = hunger;
 		hunger -= 30;
-		
+		System.out.println(
+				this.name + " has been fed. Hunger score before was: " + initialHunger + ": hunger after: " + hunger);
+
+	}
+
+	@Override
+	public void setThirst(int h) {
+		this.thirst = h;
+
+	}
+
+	@Override
+	public void walkOrganicPets() {
+		int initialBoredom = boredom;
+		boredom = -30;
+		System.out.println("You have walked: " + this.name + ". " + "The boredom level has dropped from "
+				+ initialBoredom + " to " + boredom);
+
 	}
 
 }

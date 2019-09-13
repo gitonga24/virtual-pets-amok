@@ -12,4 +12,8 @@ public interface OrganicPetsInterface {
 
 	void feedPets();
 
+	void setThirst(int h);
+	
+	void walkOrganicPets();
+
 }

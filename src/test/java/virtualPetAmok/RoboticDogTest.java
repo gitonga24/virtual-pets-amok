@@ -18,11 +18,11 @@ public class RoboticDogTest  {
 	}
 
 	@Test
-	public void cleaningCageShouldIncreaseCageCleanlinessBy50() {
+	public void cleaningCageShouldMaintainCageCleanliness() {
 		int testBefore = roboticDogTest.getCageCleanliness();
-		roboticDogTest.cleanCage(50);
+		roboticDogTest.cleanCage();
 		int testAfter = roboticDogTest.getCageCleanliness();
-		assertEquals(testAfter - testBefore, 50);
+		assertEquals(testAfter - testBefore, 0);
 		
 	}
 

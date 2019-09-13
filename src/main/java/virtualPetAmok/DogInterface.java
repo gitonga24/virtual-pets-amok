@@ -4,8 +4,9 @@ public interface DogInterface {
 
 	int getCageCleanliness();
 
-	void cleanCage(int cleanValue);
+	void cleanCage();
 	
 	void walkDog();
+	void setCageCleanliness(int cc);
 
 }

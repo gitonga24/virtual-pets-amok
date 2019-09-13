@@ -3,7 +3,7 @@ package virtualPetAmok;
 public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface {
 
 	private int oilLevel;
-	private int CageCleanliness;
+	private int cageCleanliness;
 
 	public RoboticDog(String name, String description, String demeanor, int boredom, int health) {
 		this.boredom = boredom;
@@ -13,10 +13,9 @@ public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface
 		this.health = health;
 	}
 
-	
 	@Override
 	public void setOilLevel(int oilLevel) {
-		this.oilLevel = oilLevel;	
+		this.oilLevel = oilLevel;
 	}
 
 	@Override
@@ -26,29 +25,34 @@ public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface
 
 	@Override
 	public void oilPet(int oilAmt) {
-		System.out.println(name + " has been oiled");
-		oilLevel += oilAmt;
-		
+		int oilLevelAfter = oilLevel + oilAmt;
+		System.out.println(
+				name + " has been oiled. The oil level has raised from: " + oilLevel + " to " + oilLevelAfter + ".");
 	}
 
-	
 	@Override
 	public int getCageCleanliness() {
-		return CageCleanliness;
+		return cageCleanliness;
 	}
 
 	@Override
-	public void cleanCage(int cleanValue) {
-		System.out.println(this.name +"'s cage has been cleaned.");
-		CageCleanliness += cleanValue;
+	public void cleanCage() {
+		int afterCleanlinessValue = cageCleanliness + 50;
+		System.out.println(this.name + "'s cage has been cleaned. Cleanliness value has raised from " + cageCleanliness
+				+ " to " + afterCleanlinessValue);
 
 	}
-
 
 	@Override
 	public void walkDog() {
 		System.out.println(this.name + " dog is walking");
-		
+
+	}
+
+	@Override
+	public void setCageCleanliness(int cc) {
+		this.cageCleanliness = cc;
+
 	}
 
 }

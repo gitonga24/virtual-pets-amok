@@ -58,7 +58,8 @@ public abstract class Pet {
 	
 	
 	public void play() {
-		System.out.println("You have played with: " + name);
+		int boredomAfter = boredom -30;
+		System.out.println("You have played with: " + name  +".  Boredom before was "+ boredom + ". Boredome after: " +boredomAfter);
 		boredom -= 15;
 		health += 5;
 	}

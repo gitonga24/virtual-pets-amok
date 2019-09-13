@@ -34,11 +34,11 @@ public class OrganicDogTest {
 	
 	
 	@Test
-	public void cleaningCageShouldIncreaseCageCleanlinessBy50() {
+	public void cleaningCageShouldMaintainCageCleanliness() {
 		int testBefore = organicDogTest.getCageCleanliness();
-		organicDogTest.cleanCage(50);
+		organicDogTest.cleanCage();
 		int testAfter = organicDogTest.getCageCleanliness();
-		assertEquals(testAfter - testBefore, 50);
+		assertEquals(testAfter - testBefore, 0);
 		
 	}
 	
