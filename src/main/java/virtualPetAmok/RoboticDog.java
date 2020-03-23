@@ -55,6 +55,6 @@ public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface
 	public void setCageCleanliness(int cc) {
 		this.cageCleanliness = cc;
 
-	}
+	} 
 
 }
