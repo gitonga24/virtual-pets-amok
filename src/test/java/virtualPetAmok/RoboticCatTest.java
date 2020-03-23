@@ -14,7 +14,6 @@ public class RoboticCatTest {
 		roboticCatTest.setLitterBoxCleanliness(30);
 		roboticCatTest.empyLitterBox(20);	
 		int testCleanliness = roboticCatTest.getLitterBoxCleanliness();
-		int testHealth = roboticCatTest.getHealth();
 		assertEquals(testCleanliness, 50);			
 	}
 	

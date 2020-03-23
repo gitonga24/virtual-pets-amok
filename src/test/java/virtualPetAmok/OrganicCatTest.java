@@ -11,11 +11,11 @@ public class OrganicCatTest {
 	@Test
 	public void cleaningLitterBoxShouldIncreaseLitterboxCleanilinessBy10() {
 		
-		CatInterface organicCatTest = new OrganicCat ("name", "descrption", "make", 25, 50);
+		CatInterface organicCatTest = new OrganicCat ("name", "description", "make", 25, 50);
 		int Cleanlinessbefore = organicCatTest.getLitterBoxCleanliness(); 
 		organicCatTest.empyLitterBox(10);
 		int Cleanlinessafter = organicCatTest.getLitterBoxCleanliness();
-		assertEquals ( Cleanlinessafter - Cleanlinessbefore, 10);				
+		assertEquals ( Cleanlinessafter - Cleanlinessbefore, 10);			
 	}
 
 	
@@ -56,11 +56,11 @@ public class OrganicCatTest {
 	}
 	
 	@Test
-	public void waterShouldReduceThirstBy15() {
+	public void waterShouldReduceThirstBy30() {
 		int beforeWatering = organicCatTest.getThirst();
 		organicCatTest.waterPets();
 		int aftetWatering = organicCatTest.getThirst();
-		assertEquals ( beforeWatering - aftetWatering, 15);
+		assertEquals ( beforeWatering - aftetWatering, 30);
 	}
 	
 	@Test

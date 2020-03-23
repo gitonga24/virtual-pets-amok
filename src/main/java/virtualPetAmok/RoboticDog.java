@@ -2,7 +2,7 @@ package virtualPetAmok;
 
 public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface {
 
-	private int oilLevel;
+	private int oilLevel = 0;
 	private int cageCleanliness;
 
 	public RoboticDog(String name, String description, String demeanor, int boredom, int health) {
@@ -25,9 +25,11 @@ public class RoboticDog extends Pet implements DogInterface, RoboticPetInterface
 
 	@Override
 	public void oilPet(int oilAmt) {
-		int oilLevelAfter = oilLevel + oilAmt;
+		int oilLevelBefore = oilLevel;
+		oilLevel += oilAmt;
+		
 		System.out.println(
-				name + " has been oiled. The oil level has raised from: " + oilLevel + " to " + oilLevelAfter + ".");
+				name + " has been oiled. The oil level has raised from: " + oilLevelBefore + " to " + oilLevel + ".");
 	}
 
 	@Override

@@ -47,16 +47,17 @@ public class OrganicCat extends Pet implements OrganicPetsInterface, CatInterfac
 
 	@Override
 	public void empyLitterBox(int i) {
-		int litterBoxCleanlinessBefore = LitterBoxCleanliness + i;
+		int litterBoxCleanlinessBefore = LitterBoxCleanliness;
+		LitterBoxCleanliness += i;
 		System.out.println(this.name + "'s litterbox has been emptied. Litter box cleanliness value has raised from: "
-				+ LitterBoxCleanliness + " to " + litterBoxCleanlinessBefore);
+				+ litterBoxCleanlinessBefore + " to " + LitterBoxCleanliness);
 	}
 
 	@Override
 	public void waterPets() {
-		int initiaThirst = thirst;
+		int initialThirst = thirst;
 		thirst -= 30;
-		System.out.println(this.name + " has been watered. Thirst score before was: " + initiaThirst
+		System.out.println(this.name + " has been watered. Thirst score before was: " + initialThirst
 				+ ": Thirst after: " + thirst);
 	}
 
